@@ -3,7 +3,7 @@
 
 
 
-finished game download link: (https://github.com/ILBBBM2/finished-game/archive/refs/heads/main.zip)
+pre-release build: https://github.com/ILBBBM2/floppy-shooter/releases/download/pre-release/finished-game-main.zip
 
 ```
 $$\                        $$\                                   $$\                  $$\    $$\      $$\         $$\$$\ 
