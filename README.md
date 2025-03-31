@@ -71,7 +71,7 @@ bool CheckRayCollisionBox(Ray ray, BoundingBox box) {
 
 after that headache it got it running pretty swelliingly. then came the problem of graphing, writing the actual graphing script wasnt hard but figuring out a way to store info across runs was. after some thinking i decided to use a .txt file to store accuracies as it was the simplest way to implement it and also allowed for easy debugging. using fstream i wrote simple fucntions to load store and clear accuracy.
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428468945-3d648699-9feb-4a66-a7eb-aa1035fbd131.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093342Z&X-Amz-Expires=300&X-Amz-Signature=17327efa3608bb1fed4f713e4bed4160a4ff535f26386a39174c02626b81e349&X-Amz-SignedHeaders=host
+[https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428468945-3d648699-9feb-4a66-a7eb-aa1035fbd131.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093342Z&X-Amz-Expires=300&X-Amz-Signature=17327efa3608bb1fed4f713e4bed4160a4ff535f26386a39174c02626b81e349&X-Amz-SignedHeaders=host](https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428468945-3d648699-9feb-4a66-a7eb-aa1035fbd131.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093342Z&X-Amz-Expires=300&X-Amz-Signature=17327efa3608bb1fed4f713e4bed4160a4ff535f26386a39174c02626b81e349&X-Amz-SignedHeaders=host)
 
 now that i got the base mechanics working its time to make the game look good..... or so i thought
 
