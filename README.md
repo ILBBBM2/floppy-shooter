@@ -31,6 +31,11 @@ requirements:
 - storage: 1.25mb
 
 
+
+
+
+
+
 ## **the idea:**
 
 to begin with this project was very hard to come up with in the first place, not many things fit in a floppy disk, which stores just 1.44 megabytes, to begin with, for some context a usual 4k png would take up 5 megabytes, more than 4 times the amount that we currently have to our disposal
@@ -38,6 +43,11 @@ to begin with this project was very hard to come up with in the first place, not
 
 with such restrictions a classical game engine would not cut it, i would need to use something extremely lightweight.
 my first thoght was to use pygame as it was relatively easy but after some tests, just a simple pong game was 5 megabytes. after some web surfing i came across a wrapper for openGL that had a low system requirement, with little to no bloat, RayLib.
+
+
+## **a background on RayLib and floppy disk games**
+
+RayLib is not a game engine, rather a wrapper for openGL, which directly communicates with the hardware. Due to this i had to make my own "game engine". this essentially meant making camera movement, physics, collision and objects all from scratch whihc was the only way this game would have even been possible. Games were never meant to be put on floppy disks, even in the early days, they were just a installer that would run and copy the game files into your systems hard drive. DOOM a classic game took 4 floppy disks to install. other games made to fit in a floppy disk are usually rudementary text based games, or side scrolling 2D games. Even doom uses "2.5D" which is just 2D cleverly disguised to look like 3D.
 
 
 ## **challenges of raylib and openGL**
@@ -156,7 +166,7 @@ when working with such a small file size it is a practical death sentence to not
 
 of these compiler flags i will say that three metter more than the rest, -Oz, -s and -static. -Oz stands for Optimise for binary size and performs similar to Os which is optimise for speed. -s is strip and allows me to reduce binary size drastically. the -static flag also produces subtantial results.
 
-from this my exe went from 4.3 megabytes to 2.03 megabytes. another thing i did was further optimisation of my code, deleting anything i didnt need, culling all headerfiles that could be excluded. despite a large culling of useless code and header files, the binary size went from 2.03 megabytes to 1.98 megabytes. i then used unix to further bring downthe file size to 629 kilobytes.
+from this my exe went from 4.3 megabytes to 2.03 megabytes. another thing i did was further optimisation of my code, deleting anything i didnt need, culling all headerfiles that could be excluded. despite a large culling of useless code and header files, the binary size went from 2.03 megabytes to 1.98 megabytes. i then used upx to further bring down the file size to 629 kilobytes.
 
 BUT optimising the exe is not enough! optimising the assets was also neccasary, with 2 megabytes in assets alone i needed to do some serious work. after going through some lossless compression through deflate/inflate algorithms, similar to those used in zip programs like 7zip. then i did some serious work in recuing the colour depth. all png's are usually stored with 256 colours, but when optimising for size like this lossy compression is bound to happen. i just pushed as far i could the colour depth for it to look presentable and not to intefere with any calculations, with heightmaps and lightmaps. after multiple rounds of optimsations i got the file size of all assets down to use 627 kilobytes. that leaves us with a total file size of just 1256 kilobytes! leaving us comfortably in the 1.44 megabyte limit of a formatted floppy disk!
 
