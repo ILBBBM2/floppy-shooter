@@ -55,17 +55,17 @@ RayLib is not a game engine, rather a wrapper for openGL, which directly communi
 
 ## **challenges of raylib and openGL**
 
-RayLib can hardly be able to be called a game engine. missing most of the notable and required features, especially for 3D rendering, and a aging series of examples, with some being downright wrong or depreciated, wokring on this project was a nightmare. to optimise for binary size i was pretty much required to write the game in a low level language, such as C and C++. This caused alot of problems very early on as there are no defiitive guides on how to use RayLib, as it is a pretty niche thing, This made it so the only option to learn was to read their documentation which is especially difficult without even knowing the basics of the "engine". After about 4 or 5 hours of learning and trrial and error, i got my first build of the game running, i added some basic objects and the ability to jump:
+RayLib can hardly be able to be called a game engine. missing most of the notable and required features, especially for 3D rendering, and a aging series of examples, with some being downright wrong or depreciated, wokring on this project was a nightmare. to optimise for binary size i was pretty much required to write the game in a low level language, such as C and C++. This caused alot of problems very early on as there are no defiitive guides on how to use RayLib, as it is a pretty niche thing, This made it so the only option to learn was to read their documentation which is especially difficult without even knowing the basics of how to make a game engine. After about 4 or 5 hours of learning and trrial and error, i got my first build of the game running, i added some basic objects and the ability to jump:
 
 https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428557366-1e435921-5d15-4ec7-8444-4e0c24f358c6.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T092848Z&X-Amz-Expires=300&X-Amz-Signature=c5334652c28d617d5bb9cee59e2458413cc104cf7c6758d7bc7709928f0f12cd&X-Amz-SignedHeaders=host
 
 
-as is pretty evident, the camera did not functio9n as intended as you could not look up or down, but it was a step towards the right direction. another problem was collisions. RayLib doesnt have any commands for collsions, leading to be being stuck between a rock and a hrad place, with a horrible collision systtem and a jump function that wasz barely working i decided to call it quits for a parkour game and decided to make a aim trainer instead. a major reason i did this is because of the reecent bloating of game sizes. i play games in my free time and i strive to become better. one way to do this is by aim training, which is essentially a software that allows you to train your aim to help you hit shots in the real game. 
+as is pretty evident, the camera did not function as intended as you could not look up or down, but it was a step towards the right direction. another problem was collisions. RayLib doesnt have any commands for collsions, leading to be being stuck between a rock and a hrad place, with a horrible collision systtem and a jump function that wasz barely working i decided to call it quits for a parkour game and decided to make a aim trainer instead. a major reason i did this is because of the reecent bloating of game sizes. i play games in my free time and i strive to become better. one way to do this is by aim training, which is essentially a software that allows you to train your aim to help you hit shots in the real game. one such software is aimlabs, which despite being quite redimentary in what it offers, it needs some pretty decent specs to run with it taking up nearly 20 gigabytes on my hard drive
 
 ## **a new mission and implementation**
 
 after deciding on what to do i was left with the question of how to implement them. a aimtrainer has to have these three things in my opinion:
-- a shooting mode  where you freehand shoot boxes to see your accuracy
+- a shooting mode where you freehand shoot boxes to see your accuracy
 - a tracking mode to train your tracing and tracking for a real game
 - a grapher to show your progress and to see where you went wrong and how to adjust to it
 
@@ -92,7 +92,7 @@ now that i got the base mechanics working its time to make the game look good...
 
 ## models, lighting and textures
 
-to make the game look better i decided to add lighting. one easy way to do this is to have static lighting with it baked into texures. this would certainly be easier but would end up looking un-authentic due to my beginner level skills in textues and models. so i decided to make a dynamic lighting system, that would not only look better but also allow me to have active reflections! making the lighting system was surprisingly easy, with the only majo0r problem that i encountered being the fac that raylibs own documentation was outdated, leading to me making my ownm function for making lights and updating lights
+to make the game look better i decided to add lighting. one easy way to do this is to have static lighting with it baked into texures. this would certainly be easier but would end up looking un-authentic due to my beginner level skills in textues and models. so i decided to make a dynamic lighting system, that would not only look better but also allow me to have active reflections! making the lighting system was surprisingly easy, with the only major problem that i encountered being the fact that raylibs own documentation was outdated, leading to me making my own function for making lights and updating lights
 
 ```
 static Light CreateLight(int type, Vector3 position, Vector3 target, Color color, float intensity, Shader shader) {
