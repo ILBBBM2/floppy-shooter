@@ -3,7 +3,10 @@
 
 
 
-pre-release build: https://github.com/ILBBBM2/floppy-shooter/releases/download/pre-release/finished-game-main.zip
+> [!NOTE]
+> this is a pre-release build, expect some bugs and compatability issues
+
+pre-release build: [download](https://github.com/ILBBBM2/floppy-shooter/releases/download/pre-release/finished-game-main.zip)
 
 ```
 $$\                        $$\                                   $$\                  $$\    $$\      $$\         $$\$$\ 
