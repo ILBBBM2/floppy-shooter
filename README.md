@@ -71,7 +71,7 @@ bool CheckRayCollisionBox(Ray ray, BoundingBox box) {
 
 after that headache it got it running pretty swelliingly. then came the problem of graphing, writing the actual graphing script wasnt hard but figuring out a way to store info across runs was. after some thinking i decided to use a .txt file to store accuracies as it was the simplest way to implement it and also allowed for easy debugging. using fstream i wrote simple fucntions to load store and clear accuracy.
 
-https://github.com/user-attachments/assets/3d648699-9feb-4a66-a7eb-aa1035fbd131
+https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428468945-3d648699-9feb-4a66-a7eb-aa1035fbd131.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T092948Z&X-Amz-Expires=300&X-Amz-Signature=62faca6fcdaaaf2615d8bd944d5ee1c7283824e1f6c2920ea3a09d0c09b1fbb8&X-Amz-SignedHeaders=host
 
 now that i got the base mechanics working its time to make the game look good..... or so i thought
 
@@ -137,7 +137,7 @@ the main problem came in making the textures for the floor. after some thinking 
 
 Then came the task of adding a skybox. Despite seeming like the easiest thing to add, it proved to be the hardest because of the fact that Raylibs documentation and examples are out of date. an example given by RayLib themselves didnt work because of depreciation and feature creep. this lead to me going down a rabbithole of how to make a skybox. without any definitive proof it could even be done i spent five hours just figuring out and testing ideas on how to make a skybox 
 
-https://github.com/user-attachments/assets/0f63cf58-555a-40b4-91fa-21adc801dc04
+https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428475470-0f63cf58-555a-40b4-91fa-21adc801dc04.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093201Z&X-Amz-Expires=300&X-Amz-Signature=38114f3964444cb2ac16eedebd06503d15438470d521efabf6e0a74856c975ae&X-Amz-SignedHeaders=host
 
 no matter what i did nothing seemed to work. but then i stumbled upon somone on stackoverflow describing a way to amke a skybox with nothing but a box, only problem is that he did it in unity. with nothing to lose i went for it and made a cube with the texture of the cube and disabled backface culling before rendering. and it worked flawlessly!
 
@@ -187,7 +187,7 @@ After testing on a virtual machine i can verify that i can run on a 64 bit os wi
 
 with it done i present to you the final product!
 
-https://github.com/user-attachments/assets/4df330ee-9aea-4079-a270-8aea22a81a84
+https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428479647-4df330ee-9aea-4079-a270-8aea22a81a84.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093233Z&X-Amz-Expires=300&X-Amz-Signature=e7056d393fb9ae41b3d406b1edb164f2a51e8ab2220e985f162ca6ddc666e121&X-Amz-SignedHeaders=host
 
 ## changes to be made
 
