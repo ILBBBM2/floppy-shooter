@@ -138,7 +138,9 @@ the main problem came in making the textures for the floor. after some thinking 
 
 Then came the task of adding a skybox. Despite seeming like the easiest thing to add, it proved to be the hardest because of the fact that Raylibs documentation and examples are out of date. an example given by RayLib themselves didnt work because of depreciation and feature creep. this lead to me going down a rabbithole of how to make a skybox. without any definitive proof it could even be done i spent five hours just figuring out and testing ideas on how to make a skybox 
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428475470-0f63cf58-555a-40b4-91fa-21adc801dc04.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093201Z&X-Amz-Expires=300&X-Amz-Signature=38114f3964444cb2ac16eedebd06503d15438470d521efabf6e0a74856c975ae&X-Amz-SignedHeaders=host
+
+https://private-user-images.githubusercontent.com/166126131/428564479-13f3d916-ddcc-42b0-acff-a52d2574e8e8.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM0MTQ5MDUsIm5iZiI6MTc0MzQxNDYwNSwicGF0aCI6Ii8xNjYxMjYxMzEvNDI4NTY0NDc5LTEzZjNkOTE2LWRkY2MtNDJiMC1hY2ZmLWE1MmQyNTc0ZThlOC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwOTUwMDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NWI5MTQxYmY1YjZlYTgyYTc5ZDJkODUyNGEwNWFkMWI4MmRlMTA3ZTY0ZmIyNTRiN2Q1NmEzMGYzMzlhNTUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.fUSXC273nhpvm0Hc8UsJOVP9X__4542gtDIdQkHxZ0k
+
 
 no matter what i did nothing seemed to work. but then i stumbled upon somone on stackoverflow describing a way to amke a skybox with nothing but a box, only problem is that he did it in unity. with nothing to lose i went for it and made a cube with the texture of the cube and disabled backface culling before rendering. and it worked flawlessly!
 
@@ -188,7 +190,10 @@ After testing on a virtual machine i can verify that i can run on a 64 bit os wi
 
 with it done i present to you the final product!
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428479647-4df330ee-9aea-4079-a270-8aea22a81a84.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T093233Z&X-Amz-Expires=300&X-Amz-Signature=e7056d393fb9ae41b3d406b1edb164f2a51e8ab2220e985f162ca6ddc666e121&X-Amz-SignedHeaders=host
+
+
+https://private-user-images.githubusercontent.com/166126131/428564176-d94ab930-ac5f-4034-9afb-a8d340d4de8f.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDM0MTQ4NTksIm5iZiI6MTc0MzQxNDU1OSwicGF0aCI6Ii8xNjYxMjYxMzEvNDI4NTY0MTc2LWQ5NGFiOTMwLWFjNWYtNDAzNC05YWZiLWE4ZDM0MGQ0ZGU4Zi5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMzMVQwOTQ5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NDZlMzJiZGRiMzAwNmEyYWY5OGJiMjg4ZDEyMzVhYjhkYzZmZTRlMjI0ODdmYmQyOTU4MzUyMmJmYmVlMjRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.NLDgFiZTlj0Do7K48oxmpvC3Pj1YKhx2vWPr41W3fTU
+
 
 ## changes to be made
 
