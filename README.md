@@ -46,6 +46,8 @@ RayLib can hardly be able to be called a game engine. missing most of the notabl
 
 https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428557366-1e435921-5d15-4ec7-8444-4e0c24f358c6.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T092848Z&X-Amz-Expires=300&X-Amz-Signature=c5334652c28d617d5bb9cee59e2458413cc104cf7c6758d7bc7709928f0f12cd&X-Amz-SignedHeaders=host
 
+https://github-production-user-asset-6210df.s3.amazonaws.com/166126131/428468945-3d648699-9feb-4a66-a7eb-aa1035fbd131.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250331%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250331T094013Z&X-Amz-Expires=300&X-Amz-Signature=cc7c5c6a02197f78a402b51c19afae8380005389fae9faa86fb106fc600789f1&X-Amz-SignedHeaders=host
+
 as is pretty evident, the camera did not functio9n as intended as you could not look up or down, but it was a step towards the right direction. another problem was collisions. RayLib doesnt have any commands for collsions, leading to be being stuck between a rock and a hrad place, with a horrible collision systtem and a jump function that wasz barely working i decided to call it quits for a parkour game and decided to make a aim trainer instead. a major reason i did this is because of the reecent bloating of game sizes. i play games in my free time and i strive to become better. one way to do this is by aim training, which is essentially a software that allows you to train your aim to help you hit shots in the real game. 
 
 ## **a new mission and implementation**
