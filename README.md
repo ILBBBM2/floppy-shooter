@@ -6,7 +6,10 @@
 > [!NOTE]
 > this is a pre-release build, expect some bugs and compatability issues
 
-pre-release build: [download](https://github.com/ILBBBM2/floppy-shooter/releases/download/pre-release/finished-game-main.zip)
+pre-release build for windows: [download](https://github.com/ILBBBM2/floppy-shooter/releases/download/pre-release/finished-game-main.zip)
+
+
+linux port offered by [random0550](https://github.com/Random0550/floppy-shooter) much love <3 : [download](https://github.com/Random0550/floppy-shooter/releases/download/v1.0.0/floppy-shooter.tar.gz)
 
 ```
 $$\                        $$\                                   $$\                  $$\    $$\      $$\         $$\$$\ 
