@@ -190,6 +190,10 @@ typedef struct {
 
 static int lightCount = 0;     
 
+void dynamicsens(){
+    //add this later
+}
+
 
 
 void UpdateLightValues(Shader shader, Light light) {
@@ -335,12 +339,11 @@ int main(void)
     Model wallModel2 = LoadModelFromMesh(wallMesh2);
     wallModel.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = wallTexture;
     wallModel2.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = wallTexture;
-    // Create a plane model for the ground
-    Mesh groundMesh = GenMeshPlane(1000.0f, 1000.0f, 1, 1);
+       Mesh groundMesh = GenMeshPlane(1000.0f, 1000.0f, 1, 1);
     Model groundModel = LoadModelFromMesh(groundMesh);
     groundModel.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = groundTexture;
     boxModel.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = boxTexture;   
-    
+
     Camera camera = { 0 };
     camera.position = (Vector3){ 0.0f, 2.0f, 4.0f };   
     camera.target = (Vector3){ 0.0f, 2.0f, 0.0f };      
@@ -366,36 +369,29 @@ int main(void)
     Light burstLight;          
     bool burstLightActive = false; 
     float burstLightTimer = 0.0f;
-    // Load PBR shader and setup all required locations
+
     Shader shader = LoadShader(TextFormat("assets/pbr.vs", GLSL_VERSION),
                                TextFormat("assets/pbr.fs", GLSL_VERSION));
     shader.locs[SHADER_LOC_MAP_ALBEDO] = GetShaderLocation(shader, "albedoMap");
-    Vector2 floorTextureTiling = (Vector2){ 10.0f, 10.0f }; // Increase tiling to repeat the texture more
-    // WARNING: Metalness, roughness, and ambient occlusion are all packed into a MRA texture
-    // They are passed as to the SHADER_LOC_MAP_METALNESS location for convenience,
-    // shader already takes care of it accordingly
+    Vector2 floorTextureTiling = (Vector2){ 10.0f, 10.0f }; 
+
     shader.locs[SHADER_LOC_MAP_METALNESS] = GetShaderLocation(shader, "mraMap");
     shader.locs[SHADER_LOC_MAP_NORMAL] = GetShaderLocation(shader, "normalMap");
-    // WARNING: Similar to the MRA map, the emissive map packs different information 
-    // into a single texture: it stores height and emission data
-    // It is binded to SHADER_LOC_MAP_EMISSION location an properly processed on shader
+
     shader.locs[SHADER_LOC_MAP_EMISSION] = GetShaderLocation(shader, "emissiveMap");
     shader.locs[SHADER_LOC_COLOR_DIFFUSE] = GetShaderLocation(shader, "albedoColor");
 
-    // Setup additional required shader locations, including lights data
     shader.locs[SHADER_LOC_VECTOR_VIEW] = GetShaderLocation(shader, "viewPos");
     int lightCountLoc = GetShaderLocation(shader, "numOfLights");
     int maxLightCount = MAX_LIGHTS;
     SetShaderValue(shader, lightCountLoc, &maxLightCount, SHADER_UNIFORM_INT);
 
-    // Setup ambient color and intensity parameters
     float ambientIntensity = 0.02f;
     Color ambientColor = (Color){ 26, 32, 135, 255 };
     Vector3 ambientColorNormalized = (Vector3){ ambientColor.r/255.0f, ambientColor.g/255.0f, ambientColor.b/255.0f };
     SetShaderValue(shader, GetShaderLocation(shader, "ambientColor"), &ambientColorNormalized, SHADER_UNIFORM_VEC3);
     SetShaderValue(shader, GetShaderLocation(shader, "ambient"), &ambientIntensity, SHADER_UNIFORM_FLOAT);
 
-    // Get location for shader parameters that can be modified in real time
     int emissiveIntensityLoc = GetShaderLocation(shader, "emissivePower");
     int emissiveColorLoc = GetShaderLocation(shader, "emissiveColor");
     int textureTilingLoc = GetShaderLocation(shader, "tiling");
@@ -420,14 +416,10 @@ int main(void)
     SetShaderValue(shader, GetShaderLocation(shader, "useTexNormal"), &usage, SHADER_UNIFORM_INT);
     SetShaderValue(shader, GetShaderLocation(shader, "useTexMRA"), &usage, SHADER_UNIFORM_INT);
     SetShaderValue(shader, GetShaderLocation(shader, "useTexEmissive"), &usage, SHADER_UNIFORM_INT);
-    
-    
 
-    // Load the floor texture
     Vector2 walltexturetiling = (Vector2){2, 0.5f};
     Texture2D floorTexture = LoadTexture("assets/road_a.png");
 
-    // Assign the floor texture to the wall models
     wallModel.materials[0].maps[MATERIAL_MAP_ALBEDO].texture = floorTexture;
     wallModel.materials[0].maps[MATERIAL_MAP_METALNESS].texture = LoadTexture("assets/road_mra.png");
     wallModel.materials[0].maps[MATERIAL_MAP_NORMAL].texture = LoadTexture("assets/road_n.png");
@@ -436,11 +428,9 @@ int main(void)
     wallModel2.materials[0].maps[MATERIAL_MAP_METALNESS].texture = LoadTexture("assets/road_mra.png");
     wallModel2.materials[0].maps[MATERIAL_MAP_NORMAL].texture = LoadTexture("assets/road_n.png");
 
-    // Assign the same shader to the wall models
     wallModel.materials[0].shader = shader;
     wallModel2.materials[0].shader = shader;
 
-    // Set the material properties for the walls
     wallModel.materials[0].maps[MATERIAL_MAP_ALBEDO].color = WHITE;
     wallModel.materials[0].maps[MATERIAL_MAP_METALNESS].value = 0.0f;
     wallModel.materials[0].maps[MATERIAL_MAP_ROUGHNESS].value = 0.0f;
@@ -453,22 +443,16 @@ int main(void)
     wallModel2.materials[0].maps[MATERIAL_MAP_OCCLUSION].value = 1.0f;
     wallModel2.materials[0].maps[MATERIAL_MAP_EMISSION].color = BLACK;
 
-
-
-    // Load skybox shader
     Shader skyboxShader = LoadShader(TextFormat("assets/skybox.vs", GLSL_VERSION),
     TextFormat("assets/skybox.fs", GLSL_VERSION));
 
-    // Load cube map texture for the skybox
     Image skyboxImage = LoadImage("assets/box.png");
     TextureCubemap skyboxTexture = LoadTextureCubemap(skyboxImage, CUBEMAP_LAYOUT_AUTO_DETECT);
-    UnloadImage(skyboxImage); // Unload the image after creating the cubemap texture
-    
-    // Create a cube mesh for the skybox
+    UnloadImage(skyboxImage); 
+
     Mesh skyboxMesh = GenMeshCube(1.0f, 1.0f, 1.0f);
     Model skyboxModel = LoadModelFromMesh(skyboxMesh);
 
-    // Assign the skybox texture and shader to the model
     skyboxModel.materials[0].maps[MATERIAL_MAP_CUBEMAP].texture = skyboxTexture;
     skyboxModel.materials[0].shader = skyboxShader;
 
@@ -601,7 +585,7 @@ int main(void)
                 }
             }
 
-            UnloadDroppedFiles(droppedFiles);    // Unload filepaths from memory
+            UnloadDroppedFiles(droppedFiles); 
         }
 
         
